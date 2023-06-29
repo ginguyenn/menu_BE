@@ -1,25 +1,35 @@
-package com.restaurant_project.menu_be.Model;
+package com.restaurant_project.menu_be.Persistence;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-public class BookingEntity {
+public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private int person;
     private LocalTime time;
     private LocalDate date;
 
-    // Getter & Setter
+    //create Constructor
 
+    public Booking(long id, String name, int person, LocalTime time, LocalDate date) {
+        this.id = id;
+        this.name = name;
+        this.person = person;
+        this.time = time;
+        this.date = date;
+    }
+
+    public Booking() {
+
+    }
+
+    //Getter & Setter
 
     public long getId() {
         return id;
