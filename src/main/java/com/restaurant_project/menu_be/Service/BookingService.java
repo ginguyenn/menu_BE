@@ -3,6 +3,7 @@ package com.restaurant_project.menu_be.Service;
 import com.restaurant_project.menu_be.Error.NotFoundException;
 import com.restaurant_project.menu_be.Persistence.Booking;
 import com.restaurant_project.menu_be.Repository.BookingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class BookingService {
     private final BookingRepository bookingRepository;
 
     //add Constructor
+    @Autowired
     public BookingService(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
     }

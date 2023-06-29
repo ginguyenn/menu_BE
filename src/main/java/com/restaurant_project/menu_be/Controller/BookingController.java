@@ -2,6 +2,7 @@ package com.restaurant_project.menu_be.Controller;
 
 import com.restaurant_project.menu_be.Persistence.Booking;
 import com.restaurant_project.menu_be.Service.BookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class BookingController {
     private final BookingService bookingService;
 
     // add foodService constructor
+    @Autowired
     public BookingController(BookingService bookingService) {
         this.bookingService = bookingService;
     }

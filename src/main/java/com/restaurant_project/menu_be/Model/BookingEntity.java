@@ -18,6 +18,8 @@ public class BookingEntity {
     private LocalTime time;
     private LocalDate date;
 
+    //create Constructor
+
     // Getter & Setter
 
 
