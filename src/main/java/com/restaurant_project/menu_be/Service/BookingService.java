@@ -18,18 +18,23 @@ public class BookingService {
         this.bookingRepository = bookingRepository;
     }
 
-    //response all foods for customer
+
+    //get all bookings
     public List<Booking> getAllBooking(){
         return bookingRepository.findAll();
     }
 
+    //get 1 booking
     public Booking getBookingById(Long id) {
         return bookingRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Booking not found"));
     }
+    //create booking
     public Booking createBooking(Booking booking){
         return bookingRepository.save(booking);
     }
+
+    //update booking
     public Booking updateBooking(Long id, Booking updateBooking){
         //declare existingBooking
         Booking existingBooking = getBookingById(id);
@@ -39,6 +44,8 @@ public class BookingService {
         existingBooking.setTime(updateBooking.getTime());
         return bookingRepository.save(existingBooking);
     }
+
+    //delete booking
     public void deleteBooking(Long id){
         bookingRepository.deleteById(id);
     }
