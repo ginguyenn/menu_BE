@@ -10,10 +10,11 @@ import java.util.List;
 
 @Service
 public class BookingService {
+    @Autowired
     private final BookingRepository bookingRepository;
 
     //add Constructor
-    @Autowired
+
     public BookingService(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
     }
